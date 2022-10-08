@@ -1,0 +1,33 @@
+package factorial;
+import java.util.*;
+
+public class factorial {
+    public static boolean checkInt(String s){
+        try{
+            int x = Integer.parseInt(s);
+            return true;
+        }
+        catch(NumberFormatException e){
+            System.out.println("Enter a Valid Integer.");
+            return false;
+        }
+    }
+    public static int fact(int x){
+        if(x==0){
+            return 1;
+        }
+        return x*fact(x-1);
+    }
+    public static void main(String[] Args){
+        Scanner sc = new Scanner(System.in);
+
+        int n;
+        System.out.println("Enter a Number : ");
+        String num = sc.nextLine();
+
+        if(checkInt(num) == true){
+            n = Integer.parseInt(num);
+            System.out.println("Factorial : " + fact(n));
+        }
+    }
+}
